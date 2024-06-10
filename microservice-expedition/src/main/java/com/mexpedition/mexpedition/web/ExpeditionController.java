@@ -47,7 +47,7 @@ public class ExpeditionController {
 	@GetMapping("/Expedition/{id}")
 	public Expedition getExpeditionById(@PathVariable Integer id) {
 		 Expedition  expeditionFoundById=expeditionRepository.findById(id).get();
-		if (expeditionFoundById != null) {
+		if (expeditionFoundById == null) {
 			throw new ExpeditionNotFoundException("Expedition not found");
 		}
 		return expeditionRepository.findById(id).get();

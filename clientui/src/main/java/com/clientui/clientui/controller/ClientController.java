@@ -126,12 +126,11 @@ public class ClientController {
 
     	ExpeditionBean expedition =  expeditionsProxy.getExpeditionById( id);
     	
-    	System.out.println( "---------------------------"+expedition.getEtat());
-
         model.addAttribute("expedition", expedition);
 
         return "Expedition";
     }
+    
     //Génére une serie de 16 chiffres au hasard pour simuler vaguement une CB
     private Long numcarte() {
 
