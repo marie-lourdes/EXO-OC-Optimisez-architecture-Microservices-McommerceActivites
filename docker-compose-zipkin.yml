@@ -1,0 +1,15 @@
+
+# Extends the default docker-compose.yml with Zipkin Server distributed tracing configuration.
+# Usage: docker-compose -f ./docker-compose.yml -f ./docker-compose-zipkin.yml up
+
+services:
+
+  zipkin-server:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin-server
+    expose:
+      - '9411'
+    ports:
+      - '9411:9411'
+
+
