@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,7 @@ import com.clientui.clientui.proxies.MicroserviceProduitsProxy;
 //@Import(FeignProduitsConfig.class)
 @Controller
 public class ClientController {
+	org.slf4j.Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private MicroserviceProduitsProxy ProduitsProxy;
@@ -63,7 +65,7 @@ public class ClientController {
         ProductBean produit = ProduitsProxy.recupererUnProduit(id);
 
         model.addAttribute("produit", produit);
-
+        log.info("Récupération Fiche produits clientUi");
         return "FicheProduit";
     }
 
