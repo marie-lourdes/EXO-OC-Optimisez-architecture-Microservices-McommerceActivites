@@ -34,7 +34,7 @@ public class ProductController implements HealthIndicator {
 	@Override
 	public Health health() {
 		List<Product> products = productDao.findAll();
-
+		//products.clear(); pour tester le changement de l indicateur health a l endpoint http://localhost:9001/actuator/health
 		if (products.isEmpty()) {
 			return Health.down().build();
 		}
