@@ -39,7 +39,7 @@ public class ProductController implements HealthIndicator {
 			return Health.down().build();
 		}
 
-		return Health.down().build();
+		return Health.up().build();
 	}
 
 	// Affiche la liste de tous les produits disponibles
